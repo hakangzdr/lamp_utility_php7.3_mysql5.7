@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+    echo "You need to execute with sudo"
+    exit
+fi
+
 WWWFOLDER="/var/www"
 RED="\033[0;31m";
 LIGHTRED="\033[1;31m";
